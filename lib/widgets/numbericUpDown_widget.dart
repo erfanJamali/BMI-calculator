@@ -15,6 +15,9 @@ class numbericUpDown_widget extends StatefulWidget {
 
   @override
   State<numbericUpDown_widget> createState() => _numbericUpDown_widgetState();
+
+
+  int get weight => weightVal;
 }
 
 class _numbericUpDown_widgetState extends State<numbericUpDown_widget> {
@@ -66,15 +69,23 @@ class _numbericUpDown_widgetState extends State<numbericUpDown_widget> {
             setState(() {
               if (doPlus) {
                 if (widget._isWeight) {
-                  weightVal++;
+                  if(weightVal <= 648) {
+                    weightVal++;
+                  }
                 } else if (!widget._isWeight) {
-                  ageVal++;
+                  if(ageVal <= 121) {
+                    ageVal++;
+                  }
                 }
               } else if (!doPlus) {
                   if (widget._isWeight) {
-                    weightVal--;
+                    if(weightVal >= 1) {
+                      weightVal--;
+                    }
                   } else if (!widget._isWeight) {
-                    ageVal--;
+                    if(ageVal >=1) {
+                      ageVal--;
+                    }
                   }
               }
             });

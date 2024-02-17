@@ -7,16 +7,24 @@ import '../pages/input_page.dart';
 class heightSlider_widegt extends StatefulWidget {
   @override
   State<heightSlider_widegt> createState() => _heightSlider_widegtState();
+
+  double get getHeight => _currentSliderValue;
+
+  //
+  void setHeight(double newVal) {
+    _currentSliderValue = newVal;
+  }
+  //
 }
 
-late double currentSliderValue;
+late double _currentSliderValue;
 
 class _heightSlider_widegtState extends State<heightSlider_widegt> {
   @override
   void initState() {
     super.initState();
     //
-    currentSliderValue =  160;
+    _currentSliderValue = 160;
   }
 
   @override
@@ -30,10 +38,10 @@ class _heightSlider_widegtState extends State<heightSlider_widegt> {
           setState(() {
             // if (heightBase) {
             //   heightBase = false;
-            //   currentSliderValue=currentSliderValue / 0.0328084;
+            //   _currentSliderValue=_currentSliderValue / 0.0328084;
             // } else if (!heightBase) {
             //   heightBase = true;
-            //   currentSliderValue= currentSliderValue *  0.0328084;
+            //   _currentSliderValue= _currentSliderValue *  0.0328084;
             // }
           });
         },
@@ -61,7 +69,7 @@ class _heightSlider_widegtState extends State<heightSlider_widegt> {
                   Padding(
                     padding: EdgeInsets.only(top: thisSize.height * 0.008),
                     child: Text(
-                      currentSliderValue.round().toString() + " CM",
+                      _currentSliderValue.round().toString() + " CM",
                       style: const TextStyle(
                         fontFamily: "myFont",
                         fontSize: 70,
@@ -75,9 +83,9 @@ class _heightSlider_widegtState extends State<heightSlider_widegt> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Slider(
-                    value: currentSliderValue,
+                    value: _currentSliderValue,
                     activeColor: kColorDarkPurple,
-                    min:  40,
+                    min: 40,
                     max: 300,
                     divisions: 260,
                     overlayColor: MaterialStateProperty.all(kColorLightPurple),
@@ -85,7 +93,7 @@ class _heightSlider_widegtState extends State<heightSlider_widegt> {
                     inactiveColor: kColorDarkBlue,
                     onChanged: (value) {
                       setState(() {
-                        currentSliderValue = value;
+                        _currentSliderValue = value;
                       });
                     },
                   ),

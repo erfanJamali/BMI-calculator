@@ -1,6 +1,7 @@
 
 import 'package:bmi_calculator/conts/colors.dart';
 import 'package:bmi_calculator/pages/input_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../functions/responsiveSize.dart';
@@ -26,6 +27,7 @@ class selectGender_widget extends StatelessWidget {
       child: InkWell(
         borderRadius: BorderRadius.circular(10),
         onTap: _fun,
+        splashColor: (_gender) ? CupertinoColors.systemBlue : Colors.pinkAccent,
         child: Container(
           width: responsiveSize(thisSize.width * 0.45, 200, 350),
           height: responsiveSize(thisSize.height * 0.2, 180, 330),

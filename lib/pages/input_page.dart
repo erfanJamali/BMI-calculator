@@ -1,5 +1,3 @@
-import 'dart:js_util';
-
 import 'package:bmi_calculator/conts/colors.dart';
 import 'package:bmi_calculator/functions/responsiveSize.dart';
 import 'package:bmi_calculator/pages/output_page.dart';
@@ -22,12 +20,17 @@ class input_page extends StatefulWidget {
   @override
   State<input_page> createState() => _input_pageState();
 }
-
+//
+late heightSlider_widegt hs = heightSlider_widegt();
+//
 class _input_pageState extends State<input_page> {
   @override
   Widget build(BuildContext context) {
     //
     thisSize = MediaQuery.of(context).size;
+    //
+    numbericUpDown_widget nm1 = const numbericUpDown_widget("WEIGHT", true);
+    numbericUpDown_widget nm2 = const numbericUpDown_widget("AGE", false);
     //
     return Scaffold(
       backgroundColor: kColorDarkBlue,
@@ -54,9 +57,9 @@ class _input_pageState extends State<input_page> {
           responsiveHeight(),
           heightSlider_widegt(),
           responsiveHeight(),
-          const row_widget(
-            numbericUpDown_widget("WEIGHT", true),
-            numbericUpDown_widget("AGE", false),
+          row_widget(
+            nm1,
+            nm2,
           ),
           const Spacer(),
           InkWell(
@@ -64,7 +67,7 @@ class _input_pageState extends State<input_page> {
               Navigator.push(
                 context,
                 ModalBottomSheetRoute(
-                    builder: (context) => const output_page(),
+                    builder: (context) => output_page(hs.getHeight, nm1.weight),
                     isScrollControlled: false),
               );
             },
@@ -89,10 +92,10 @@ class _input_pageState extends State<input_page> {
     setState(() {
       if (doClick) {
         doClick = false;
-        currentSliderValue = 160;
+    hs.setHeight(160);
       } else if (!doClick) {
         doClick = true;
-        currentSliderValue = 175;
+        hs.setHeight(175);
       }
     });
   }
