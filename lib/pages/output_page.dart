@@ -1,4 +1,5 @@
-import 'package:bmi_calculator/conts/colors.dart';
+import 'package:bmi_calculator/const/colors.dart';
+import 'package:bmi_calculator/functions/dialogAlert.dart';
 import 'package:bmi_calculator/functions/responsiveSize.dart';
 import 'package:bmi_calculator/functions/showSnack.dart';
 import 'package:bmi_calculator/pages/input_page.dart';
@@ -89,7 +90,7 @@ class _output_pageState extends State<output_page> {
               children: [
                 const SizedBox(width: 14),
                 SizedBox(
-                  width: (outSize.width * 0.9) / 2,
+                  width: responsiveSize((outSize.width * 0.9) / 2, 100, 300),
                   child: Column(
                     children: [
                       const SizedBox(height: 14),
@@ -161,5 +162,7 @@ class _output_pageState extends State<output_page> {
     showSnake(context, "BMI has been saved", () {});
   }
 
-  void shareBtnClickFun() {}
+  void shareBtnClickFun() {
+    dialogAlert(context);
+  }
 }

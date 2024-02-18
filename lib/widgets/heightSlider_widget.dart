@@ -1,4 +1,4 @@
-import 'package:bmi_calculator/conts/colors.dart';
+import 'package:bmi_calculator/const/colors.dart';
 import 'package:flutter/material.dart';
 
 import '../functions/responsiveSize.dart';

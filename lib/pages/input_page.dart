@@ -1,4 +1,4 @@
-import 'package:bmi_calculator/conts/colors.dart';
+import 'package:bmi_calculator/const/colors.dart';
 import 'package:bmi_calculator/functions/responsiveSize.dart';
 import 'package:bmi_calculator/pages/output_page.dart';
 import 'package:bmi_calculator/widgets/heightSlider_widget.dart';
@@ -20,8 +20,10 @@ class input_page extends StatefulWidget {
   @override
   State<input_page> createState() => _input_pageState();
 }
+
 //
 late heightSlider_widegt hs = heightSlider_widegt();
+
 //
 class _input_pageState extends State<input_page> {
   @override
@@ -43,7 +45,10 @@ class _input_pageState extends State<input_page> {
           style: TextStyle(
               color: kColorWhite, fontSize: 30, fontWeight: FontWeight.bold),
         ),
-        leading: Icon(Icons.add, color: kColorWhite, size: 50),
+        leading: InkWell(
+          onTap: () {},
+          child: Icon(Icons.list_sharp, color: kColorWhite, size: 50),
+        ),
       ),
       body: Column(
         children: [
@@ -92,7 +97,7 @@ class _input_pageState extends State<input_page> {
     setState(() {
       if (doClick) {
         doClick = false;
-    hs.setHeight(160);
+        hs.setHeight(160);
       } else if (!doClick) {
         doClick = true;
         hs.setHeight(175);
