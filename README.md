@@ -10,8 +10,8 @@ A project for calculate your BMI.
 4. Personalization "inkWell"s color in click event.
 5. Work with "font awesome".
 
-##چالش:
-
+##چالش ها:
+ 
 1. درست کردن ویجت ها به صورت انعطاف پذیر با اندازه محیط.
 2. درست کردن دکمه های "true false" (برای تعیین جنسیت کاربر).
 3. درست کردن ویجت	 "slider".
