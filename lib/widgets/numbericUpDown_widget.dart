@@ -26,8 +26,8 @@ class _numbericUpDown_widgetState extends State<numbericUpDown_widget> {
     return Material(
       borderRadius: BorderRadius.circular(10),
       child: Container(
-        width: responsiveSize(thisSize.width * 0.45, 200, 350),
-        height: responsiveSize(thisSize.height * 0.25, 180, 330),
+        width: responsiveSize(MediaQuery.of(context).size.width * 0.45, 200, 350),
+        height: responsiveSize(MediaQuery.of(context).size.height * 0.25, 180, 330),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: kColorBlue,

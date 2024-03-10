@@ -1,16 +1,11 @@
 # bmi_calculator
 
-A new Flutter project.
+A project for calculate your BMI. 
 
-## Getting Started
+## Challenges
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Make widgets responsive with platform size. 
+2. Make "true false" button (for definition user gender).
+3. Make slider widget.
+4. Personalization "inkWell"s color in click event.
+5. Work with font awesome.

@@ -1,15 +1,23 @@
+import 'package:bmi_calculator/functions/showSnack.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-Widget shareTable(context, String _txt, IconData _icon, bool isLast) {
+Widget shareTable(context, String _txt, IconData _icon, {bool isLast = false}) {
   return InkWell(
-    onTap: (){},
+    onTap: () {
+      Navigator.pop(context);
+      showSnake(context, "your BMI shared on $_txt");
+    },
     child: Column(
       children: [
         const SizedBox(height: 10),
         Row(
           children: [
             const SizedBox(width: 5),
-            Text(_txt, style: const TextStyle(fontSize: 30),),
+            Text(
+              _txt,
+              style: const TextStyle(fontSize: 30),
+            ),
             const Spacer(),
             Icon(_icon, size: 30),
             const SizedBox(width: 5),
@@ -30,13 +38,13 @@ Widget shareTable(context, String _txt, IconData _icon, bool isLast) {
 void dialogAlert(context) {
   //
   List<Widget> teblesList = [
-    shareTable(context, "WhatsApp", Icons.emoji_nature_sharp, false),
-    shareTable(context, "Tinder", Icons.whatshot_sharp, false),
-    shareTable(context, "Instagram", Icons.install_desktop, false),
-    shareTable(context, "X", Icons.sunny, false),
-    shareTable(context, "FaceBook", Icons.facebook, false),
-    shareTable(context, "Telegram", Icons.telegram, false),
-    shareTable(context, "SMS", Icons.sms, true),
+    shareTable(context, "WhatsApp", FontAwesomeIcons.whatsapp),
+    shareTable(context, "Tinder", FontAwesomeIcons.fire),
+    shareTable(context, "Instagram", FontAwesomeIcons.instagram),
+    shareTable(context, "X", FontAwesomeIcons.twitter),
+    shareTable(context, "FaceBook", FontAwesomeIcons.facebook),
+    shareTable(context, "Telegram", FontAwesomeIcons.telegram),
+    shareTable(context, "SMS", FontAwesomeIcons.commentSms, isLast: true),
   ];
   //
   return showAboutDialog(

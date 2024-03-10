@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 late Size thisSize;
 bool doClick = false;
 // false => cm || true => foot
-// bool heightBase = false;
+// // bool heightBase = false;
 //
 
 class input_page extends StatefulWidget {
@@ -71,7 +71,7 @@ class _input_pageState extends State<input_page> {
             onTap: () {
               Navigator.push(
                 context,
-                ModalBottomSheetRoute(
+                 ModalBottomSheetRoute(
                     builder: (context) => output_page(hs.getHeight, nm1.weight),
                     isScrollControlled: false),
               );
